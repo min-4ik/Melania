@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,22 +44,25 @@
         margin-top: 20px;
         font-size: 1.5rem;
         color: #cc3399;
+        text-align: center;
     }
 </style>
 </head>
 <body>
 
 <h1>Melania 💖</h1>
-<button onclick="sayHello()">Click me!</button>
+<button onclick="sayHello()">Нажми меня!</button>
 <div id="message"></div>
 
 <script>
 function sayHello() {
     const messages = [
-        "Hi! You're amazing today! 🌸",
-        "Keep smiling, Melania! 💕",
-        "You are strong and beautiful! 🌷",
-        "Shine bright like a star! ✨"
+        "Ты сегодня невероятно милая! 🌸",
+        "Пусть твоя улыбка сияет весь день! 💕",
+        "Ты сильная и прекрасная! 🌷",
+        "Сияй, как яркая звезда! ✨",
+        "Пусть каждый твой день будет волшебным! 🦋",
+        "Ты делаешь этот мир ярче! 🌸"
     ];
     const randomIndex = Math.floor(Math.random() * messages.length);
     document.getElementById('message').innerText = messages[randomIndex];
