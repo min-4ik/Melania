@@ -4,20 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Melania Page</title>
-
 <style>
-/* ---------------- Шрифты ---------------- */
-@font-face {
-    font-family: 'Melania';
-    src: url('data:font/woff2;base64,INSERT-YOUR-FONT-BASE64-HERE') format('woff2'); /* твой встроенный шрифт Melania */
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-/* ---------------- Общие стили ---------------- */
 body {
-    font-family: 'Comic Sans MS', cursive, sans-serif; /* базовый шрифт для всего текста, кроме Melania */
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* шрифт для комплиментов */
     background: linear-gradient(to bottom, #ffe6f0, #fff0f5);
     display: flex;
     flex-direction: column;
@@ -27,20 +16,21 @@ body {
     margin: 0;
 }
 
-/* ---------------- Заголовок ---------------- */
+/* Заголовок Melania с фиксированной рендерингом М на iOS */
 h1 {
-    font-family: 'Melania', cursive, sans-serif; /* наш шрифт Melania */
+    font-family: 'Melania', sans-serif; /* твой шрифт заголовка */
     color: #ff66b2;
     font-size: 3rem;
     margin-bottom: 20px;
     text-shadow: 1px 1px 2px #ff99cc;
+
     display: inline-block;
-    line-height: 1;
+    line-height: 1.1; /* чуть увеличено для iOS */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    vertical-align: middle; /* фикс смещения буквы М */
 }
 
-/* ---------------- Кнопка ---------------- */
 button {
     background-color: #ff99cc;
     border: none;
@@ -51,7 +41,7 @@ button {
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     transition: 0.3s;
-    font-family: 'Melania', cursive, sans-serif;
+    font-family: 'Melania', sans-serif;
 }
 
 button:hover {
@@ -59,18 +49,16 @@ button:hover {
     transform: scale(1.1);
 }
 
-/* ---------------- Сообщение (комплименты) ---------------- */
 #message {
     margin-top: 20px;
     font-size: 1.5rem;
     color: #cc3399;
     text-align: center;
     font-family: 'Comic Sans MS', cursive, sans-serif; /* шрифт комплиментов */
-    display: inline-block;
     line-height: 1.3;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     word-break: break-word;
+    display: inline-block;
+    max-width: 90%;
 }
 </style>
 </head>
