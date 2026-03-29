@@ -6,30 +6,22 @@
 <title>Melania Page</title>
 
 <style>
-/* ---------------- Шрифты ---------------- */
+/* ---------------- ШРИФТЫ ---------------- */
 @font-face {
     font-family: 'Melania';
-    src: url('fonts/Melania.woff2') format('woff2'),
-         url('fonts/Melania.woff') format('woff'),
-         url('fonts/Melania.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+    src: url('fonts/Melania.ttf') format('truetype'); /* упрощено для Android */
     font-display: swap;
 }
 
 @font-face {
     font-family: 'ComplimentsFont';
-    src: url('fonts/ComplimentsFont.woff2') format('woff2'),
-         url('fonts/ComplimentsFont.woff') format('woff'),
-         url('fonts/ComplimentsFont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+    src: url('fonts/ComplimentsFont.ttf') format('truetype');
     font-display: swap;
 }
 
-/* ---------------- Общие стили ---------------- */
+/* ---------------- BODY ---------------- */
 body {
-    font-family: 'Melania', cursive, sans-serif; /* Melania по умолчанию */
+    font-family: 'Melania', sans-serif;
     background: linear-gradient(to bottom, #ffe6f0, #fff0f5);
     display: flex;
     flex-direction: column;
@@ -39,20 +31,25 @@ body {
     margin: 0;
 }
 
-/* ---------------- Заголовок ---------------- */
+/* ---------------- ЗАГОЛОВОК ---------------- */
 h1 {
-    font-family: 'Melania', cursive, sans-serif;
+    font-family: 'Melania', sans-serif;
     color: #ff66b2;
     font-size: 3rem;
     margin-bottom: 20px;
     text-shadow: 1px 1px 2px #ff99cc;
-    display: inline-block;
-    line-height: 1; 
+
+    /* 🔥 ФИКС iOS */
+    display: block;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    transform: translateZ(0);
+
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
-/* ---------------- Кнопка ---------------- */
+/* ---------------- КНОПКА ---------------- */
 button {
     background-color: #ff99cc;
     border: none;
@@ -63,26 +60,35 @@ button {
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     transition: 0.3s;
-    font-family: 'Melania', cursive, sans-serif; /* кнопка тоже Melania */
+    font-family: 'Melania', sans-serif;
 }
 
 button:hover {
     background-color: #ff66b2;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
-/* ---------------- Сообщение ---------------- */
+/* ---------------- КОМПЛИМЕНТЫ ---------------- */
 #message {
     margin-top: 20px;
     font-size: 1.5rem;
     color: #cc3399;
     text-align: center;
-    font-family: 'ComplimentsFont', sans-serif; /* комплименты отдельным шрифтом */
-    display: inline-block;
-    line-height: 1.3;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+
+    font-family: 'ComplimentsFont', sans-serif;
+
+    /* 🔥 ГЛАВНЫЙ ФИКС */
+    display: block;
+    max-width: 90%;
+    line-height: 1.4;
     word-break: break-word;
+
+    /* 🔥 УБИРАЕТ ЛОМАНИЕ НА iOS */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 </style>
 </head>
@@ -203,6 +209,7 @@ function sayHello() {
         "Ты — настоящее чудо 💖✨",
         "Ты просто идеальная 💕💋"
     ];
+
     const randomIndex = Math.floor(Math.random() * messages.length);
     document.getElementById('message').innerText = messages[randomIndex];
 }
