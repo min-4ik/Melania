@@ -4,9 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Melania Page</title>
+
+<!-- 🔥 Подключаем шрифт для комплиментов -->
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&display=swap" rel="stylesheet">
+
 <style>
+/* ---------------- BODY ---------------- */
 body {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: 'Comfortaa', sans-serif;
     background: linear-gradient(to bottom, #ffe6f0, #fff0f5);
     display: flex;
     flex-direction: column;
@@ -14,24 +19,25 @@ body {
     justify-content: center;
     min-height: 100vh;
     margin: 0;
-    padding: 20px;
-    box-sizing: border-box;
 }
 
-/* FIX для буквы М на iOS */
+/* ---------------- ЗАГОЛОВОК (Melania стиль) ---------------- */
 h1 {
+    font-family: 'Comic Sans MS', cursive;
     color: #ff66b2;
     font-size: 3rem;
     margin-bottom: 20px;
     text-shadow: 1px 1px 2px #ff99cc;
-    display: inline-block;
+
+    /* 🔥 фикс iOS для буквы М */
     line-height: 1.2;
+    letter-spacing: 1px;
+    transform: translateZ(0);
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    vertical-align: middle;
-    text-align: center;
+    text-rendering: optimizeLegibility;
 }
 
+/* ---------------- КНОПКА ---------------- */
 button {
     background-color: #ff99cc;
     border: none;
@@ -42,21 +48,30 @@ button {
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     transition: 0.3s;
+    font-family: 'Comfortaa', sans-serif;
 }
 
 button:hover {
     background-color: #ff66b2;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
+/* ---------------- КОМПЛИМЕНТЫ ---------------- */
 #message {
     margin-top: 20px;
     font-size: 1.5rem;
     color: #cc3399;
     text-align: center;
+    font-family: 'Comfortaa', sans-serif;
+    max-width: 90%;
     line-height: 1.4;
     word-break: break-word;
-    max-width: 90%;
+
+    /* 🔥 фикс всех багов с рендерингом */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 </style>
 </head>
@@ -177,6 +192,7 @@ function sayHello() {
         "Ты — настоящее чудо 💖✨",
         "Ты просто идеальная 💕💋"
     ];
+
     const randomIndex = Math.floor(Math.random() * messages.length);
     document.getElementById('message').innerText = messages[randomIndex];
 }
