@@ -4,12 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Melania Page</title>
-
 <style>
 /* ---------------- Встроенный шрифт Melania ---------------- */
 @font-face {
     font-family: 'Melania';
-    src: url('data:font/woff2;base64,PUT-YOUR-BASE64-FONT-HERE') format('woff2');
+    src: url('data:font/woff2;base64,d09GMgABAAAAAAmkABAAAAAAA...') format('woff2'); 
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -34,10 +33,15 @@ h1 {
     font-size: 3rem;
     margin-bottom: 20px;
     text-shadow: 1px 1px 2px #ff99cc;
-    display: block; /* исправлено для iOS */
-    line-height: 1.2; /* предотвращает смещение буквы */
+    display: block;
+    line-height: 1.2;
+    padding: 0.1em 0;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    transform: translateY(0);
+    vertical-align: middle;
+    word-break: break-word;
+    text-align: center;
 }
 
 /* ---------------- Кнопка ---------------- */
@@ -66,11 +70,12 @@ button:hover {
     color: #cc3399;
     text-align: center;
     font-family: 'Melania', cursive, sans-serif;
-    display: block;
-    line-height: 1.5;
-    word-wrap: break-word;
+    display: inline-block;
+    line-height: 1.4;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    word-break: break-word;
+    max-width: 90%;
 }
 </style>
 </head>
