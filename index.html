@@ -5,14 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Melania Page</title>
 
-<!-- 🔥 ПОДКЛЮЧЕНИЕ КРАСИВЫХ ШРИФТОВ -->
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Comfortaa:wght@400;600&display=swap" rel="stylesheet">
+<!-- 🔥 ШРИФТ КАК COMIC SANS (РАБОТАЕТ ВЕЗДЕ) -->
+<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-
-/* ---------------- BODY ---------------- */
 body {
-    font-family: 'Comfortaa', sans-serif;
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
     background: linear-gradient(to bottom, #ffe6f0, #fff0f5);
     display: flex;
     flex-direction: column;
@@ -22,24 +20,24 @@ body {
     margin: 0;
 }
 
-/* ---------------- ЗАГОЛОВОК (Melania стиль) ---------------- */
+/* 🔥 MELANIA */
 h1 {
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive;
     color: #ff66b2;
     font-size: 3rem;
     margin-bottom: 20px;
     text-shadow: 1px 1px 2px #ff99cc;
 
-    /* 🔥 фиксы iOS */
+    /* ФИКС iOS */
     line-height: 1.2;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     transform: translateZ(0);
 
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }
 
-/* ---------------- КНОПКА ---------------- */
+/* КНОПКА */
 button {
     background-color: #ff99cc;
     border: none;
@@ -50,7 +48,7 @@ button {
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     transition: 0.3s;
-    font-family: 'Comfortaa', sans-serif;
+    font-family: 'Comic Neue', sans-serif;
 }
 
 button:hover {
@@ -58,27 +56,26 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* ---------------- КОМПЛИМЕНТЫ ---------------- */
+/* КОМПЛИМЕНТЫ */
 #message {
     margin-top: 20px;
     font-size: 1.5rem;
     color: #cc3399;
     text-align: center;
 
-    font-family: 'Comfortaa', sans-serif;
+    font-family: 'Comic Neue', sans-serif;
 
     max-width: 90%;
     line-height: 1.4;
     word-break: break-word;
 
-    /* 🔥 фикс всех багов */
+    /* ФИКС ВСЕХ БАГОВ */
     transform: translateZ(0);
     backface-visibility: hidden;
 
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }
-
 </style>
 </head>
 <body>
